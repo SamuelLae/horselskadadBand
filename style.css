@@ -1,0 +1,456 @@
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+ 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+ 
+::-webkit-scrollbar {
+    display: none;
+}
+ 
+body {
+    background-color: black;
+    color: white;
+    font-family: Lexend, sans-serif;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+ 
+a {
+    color: white;
+    text-decoration: none;
+}
+ 
+a:hover {
+    text-decoration: underline;
+}
+ 
+hr {
+    border: none;
+    height: 0.5px;
+    background-color: rgb(216, 216, 216);
+}
+ 
+/* Header Styles */
+ 
+header {
+    background-color: black;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 0 1rem;
+}
+ 
+header h1 {
+    text-align: center;
+    font-size: clamp(1.2rem, 4vw, 2.5em);
+}
+ 
+.logo {
+    height: 120px;
+    width: auto;
+}
+
+.logo:hover {
+    scale: 1.05;
+}
+ 
+.navigate,
+.links {
+    display: flex;
+    gap: clamp(0.4em, 2vw, 1em);
+    align-items: center;
+}
+ 
+.navigate {
+    position: absolute;
+    left: 1.2em;
+}
+ 
+.links {
+    position: absolute;
+    right: 1.2em;
+}
+ 
+.navigate a h3,
+.links a h3 {
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    margin: 0;
+    white-space: nowrap;
+}
+ 
+/* Mobile menue */
+ 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 1100;
+}
+ 
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+ 
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #0a0a0a;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    z-index: 999;
+    border-top: 1px solid #222;
+    animation: dropDown 0.3s ease-out;
+}
+ 
+.mobile-menu.open {
+    display: flex;
+}
+ 
+.mobile-menu a h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+@keyframes dropDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+ 
+/*main picture*/
+ 
+main {
+    max-width: 1700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em ;
+}
+ 
+main img {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+}
+ 
+/* container for sections  */
+ 
+.container {
+    background-color: black;
+    color: white;
+    width: min(90vw, 700px);
+    margin: 4rem auto;
+    text-align: center;
+    padding-top: 2em;
+    animation: fadeIn linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 400px;
+}
+ 
+.container h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(1.5rem, 5vw, 3em);
+}
+ 
+
+/* Gig List Styles */
+
+.gig-list {
+    color: white;
+    width: 100%;
+}
+ 
+.gig-list .item {
+    background: linear-gradient(270deg, rgb(90, 0, 90), #3b003b);
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    align-items: center;
+}
+ 
+.gig-list .item:hover {
+    background-color: rgb(66, 19, 19);
+}
+ 
+.gig-list .item .date p {
+    margin: 0.15em 0;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+}
+ 
+.gig-list .item .name h2 {
+    margin: 0;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+ 
+.gig-list .item .biljeter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    background-color: #000000;
+    color: white;
+    border-radius: 1.25rem;
+    font-size: clamp(0.7rem, 1.8vw, 0.95rem);
+    white-space: nowrap;
+    padding: 0 0.5em;
+}
+ 
+.gig-list .item .biljeter:hover {
+    background-color: #292929;
+    text-decoration: none;
+}
+ 
+
+
+
+article {
+    width: 100%;
+    animation: fadeIn linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 400px;
+}
+ 
+article h1 {
+    margin-top: 4rem;
+    margin-bottom: 0;
+    font-size: clamp(1.5rem, 5vw, 3em);
+    text-align: center;
+}
+ 
+/*Merch styles*/
+ 
+.carousel {
+    width: 90%;
+    overflow-x: auto;
+    margin: 1.5em auto;
+    margin-bottom: 2em;
+    display: flex;
+    gap: 1em;
+    scroll-behavior: smooth;
+    anchor-name: --carousel;
+    scroll-snap-type: x mandatory;
+}
+ 
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+ 
+.carousel::scroll-button(right),
+.carousel::scroll-button(left) {
+    content: '→';
+    border: none;
+    background-color: rgb(82, 39, 82);
+    font-size: 1.5rem;
+    color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding-bottom: 0.1em;
+    cursor: pointer;
+    position: fixed;
+    position-anchor: --carousel;
+    position-area: right center;
+    translate: -50%;
+}
+ 
+.carousel::scroll-button(left) {
+    content: '←';
+    position-area: left center;
+    translate: 50%;
+}
+ 
+.carousel::scroll-button(right):disabled,
+.carousel::scroll-button(left):disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+ 
+.card {
+    scroll-snap-align: start;
+    flex: 0 0 clamp(160px, 40vw, 20em);
+    height: clamp(100px, 25vw, 12em);
+    background-color: #181818;
+    border-radius: 0.5em;
+    text-align: center;
+    align-content: center;
+}
+ 
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+/* Information */
+
+section {
+    width: min(90vw, 700px);
+    margin: 3em auto;
+    text-align: center;
+    font-size: clamp(1rem, 2.5vw, 1.5em);
+    animation: fadeIn linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 200px;
+}
+    
+/* Contact Section */
+ 
+.contactContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 6rem 2rem 2rem;
+}
+ 
+.contactLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+    width: min(100%, 420px);
+}
+ 
+.contactLeftTitle {
+    font-weight: 600;
+    color: rgb(136, 0, 129);
+    font-size: clamp(1.5rem, 5vw, 40px);
+    margin-bottom: 5px;
+}
+ 
+.contactLeftTitle hr {
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    height: 5px;
+    background: linear-gradient(270deg, purple, #3b003b);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+ 
+.contactInputs {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: white;
+    border-radius: 50px;
+    background-color: #1a1a1a;
+}
+ 
+.contactLeft textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+    width: 100%;
+    resize: none;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-family: Lexend, sans-serif;
+}
+ 
+.contactInputs:focus,
+.contactLeft textarea:focus {
+    border: 3px solid rgb(182, 147, 141);
+}
+ 
+.contactLeft button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #ffffff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, purple, #3b003b);
+    cursor: pointer;
+}
+ 
+.contactRight {
+    width: min(100%, 700px);
+    height: auto;
+    object-fit: cover;
+}
+ 
+
+ 
+@keyframes fadeIn {
+    from { opacity: 0; scale: 0.9; }
+    to   { opacity: 1; scale: 1; }
+}
+ 
+
+ 
+@media (max-width: 700px) {
+   
+    .navigate,
+    .links {
+        display: none;
+    }
+ 
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 1rem;
+    }
+ 
+    
+    .gig-list .item {
+        grid-template-columns: auto 1fr auto;
+        gap: 0.4rem;
+        padding: 0.6rem;
+    }
+}
+ 
+@media (max-width: 400px) {
+    .gig-list .item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+ 
+    .gig-list .item .biljeter {
+        width: 100%;
+    }
+}
