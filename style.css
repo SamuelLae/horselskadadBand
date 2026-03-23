@@ -84,11 +84,16 @@ header h1 {
     right: 1.2em;
 }
  
-.navigate a h3,
-.links a h3 {
+.navigate a h3 {
     font-size: clamp(0.7rem, 1.5vw, 1rem);
     margin: 0;
     white-space: nowrap;
+}
+
+.social-icon {
+    width: clamp(20px, 3vw, 30px);
+    height: auto;
+    transition: transform 0.2s;
 }
  
 /* Mobile menue */
