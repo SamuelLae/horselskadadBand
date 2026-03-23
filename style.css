@@ -413,6 +413,50 @@ section {
     height: auto;
     object-fit: cover;
 }
+
+.aboutUs {
+    width: min(90vw, 100%);
+    display: flex;
+    margin: 10rem;
+    
+}
+
+.aboutUsText {
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+    font-size: clamp(1rem, 2.5vw, 1.5em);
+}
+
+.aboutUs img {
+    width: 100%;
+    max-width: 1000px;
+    object-fit: cover;
+    padding-left: 10rem;
+}
+
+.namecards {
+    width: min(90vw, 100%);
+    height: 2000px;
+    display: inline-block;
+    
+}
+
+.namecards img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 0 4em;
+}
+
+.Leon, .Almer, .Fabian {
+    display: flex;
+    justify-content: left;
+}
+
+.Almer {
+    flex-direction: row-reverse;
+}
  
 
  
@@ -452,5 +496,27 @@ section {
  
     .gig-list .item .biljeter {
         width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .aboutUs {
+        flex-direction: column;
+        margin: 5rem 1rem 1rem;
+    }
+
+    .aboutUs img {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .Leon, .Almer, .Fabian {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .namecards img {
+        width: clamp(420px, 60vw, 600px);
     }
 }
