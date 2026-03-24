@@ -422,13 +422,15 @@ section {
 .aboutUs {
     width: min(90vw, 100%);
     display: flex;
-    margin: 10rem;
-    
+    flex-wrap: wrap; 
+    margin: clamp(2rem, 8vw, 10rem); 
+    gap: 2rem;
 }
 
 .aboutUsText {
     width: 100%;
     max-width: 700px;
+    flex: 1 1 300px; 
     text-align: left;
     font-size: clamp(1rem, 2.5vw, 1.5em);
 }
@@ -436,27 +438,30 @@ section {
 .aboutUs img {
     width: 100%;
     max-width: 1000px;
+    flex: 1 1 300px; 
     object-fit: cover;
-    padding-left: 10rem;
+    padding-left: clamp(1rem, 5vw, 10rem); 
 }
 
 .namecards {
     width: min(90vw, 100%);
-    height: 2000px;
-    display: inline-block;
-    
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .namecards img {
     width: 100%;
     max-width: 600px;
     height: auto;
-    padding: 0 4em;
+    padding: 0 clamp(1rem, 4vw, 4em);
 }
 
 .Leon, .Almer, .Fabian {
     display: flex;
     justify-content: left;
+    flex-wrap: wrap; 
 }
 
 .Almer {
