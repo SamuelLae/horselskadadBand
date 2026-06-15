@@ -241,6 +241,7 @@ main img {
 
 article {
     width: 100%;
+    text-align: center;
     animation: fadeIn linear;
     animation-timeline: view();
     animation-range-start: cover;
